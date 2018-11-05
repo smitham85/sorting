@@ -1,28 +1,23 @@
-const obj = {};
-obj.swap = (arr, a, b) => {
+function swap(arr, a, b) {
   const temp = arr[a];
   arr[a] = arr[b];
   arr[b] = temp;
   return arr;
 };
 
-obj.bubbleSort = (arr) => {
+function bubbleSort(arr) {
+  console.log(arr);
   let tempArray = arr;
-  tempArray.forEach(() => {
+  arr.forEach(() => {
     arr.forEach((e, i, array) => {
       let next = array[i + 1];
       if (next) {
         if (e > next) {
-          tempArray = obj.swap(array, i, i + 1);
+          tempArray = swap(array, i, i + 1);
         }
       }
     });
-
   });
+  console.log(tempArray);
   return tempArray;
 };
-
-
-
-let test = [9, 1, 2, 6, 5, 8, 7, 4, 3];
-console.log(obj.bubbleSort(test));
